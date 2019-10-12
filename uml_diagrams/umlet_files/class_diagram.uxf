@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>553</x>
+      <y>140</y>
+      <w>245</w>
+      <h>329</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;class&gt;&gt;
+pid
+--
+- kp : double
+- ki : double
+- kd : double
+- prevError : double
+- errorSum : double
+- prevTime : double
+- setPoint : double
+- dtMode :bool
+- dtVal :double
+--
++ &lt;&lt;constructor&gt;&gt;pid()
++ &lt;&lt;constructor&gt;&gt;pid(double kp, double ki, double kd)
++ &lt;&lt;constructor&gt;&gt;pid(double kp, double ki, double kd, double dtMode)
++ &lt;&lt;destructor&gt;&gt;~pid()
++ compute(feedback : double) : pidOut : double
++ setdtMode(dtMode : bool) : void 
++ setdt(dtVal: double) : void
++ setSp(setpoint : double) : void
++ setkp(kp : double) : void
++ setki(ki : double) : void
++ setkd(kd : double) : void
++ getdtMode() : dtMode : bool
++ getdt() : dtVal :double
++ getSp() : setPoint :double
++ getkp() : kp : double
++ getki() : kd : double
++ getkd() : ki : double
++ getErrorSum() : ki : double
++ getPrevError() : ki : double
++ reset() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>7</x>
+      <y>154</y>
+      <w>525</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;class&gt;&gt;
+ackerman_sim
+--
+- dt : double
+- posX : double
+- posY : double
+--
++ compute(steerAng : double, rWheelVel : double, lWheelVel : double) : heading : double, vel : double
++ ackerman_sim() : void
++ ackerman_sim(dt : double) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>266</y>
+      <w>532</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;class&gt;&gt;
+ackerman_controller
+--
+- baseline : double
+- carLen : double
+- radius : double
+- rWheelVel : double 
+- lWheelVel : double
+- steeAng : double
+- velocitysp : double
+- headingsp : double
+--
++ compute(headingFeedback : double, &amp;rWheelVel : double, &amp;lWheelVel : double,) : steerAng : double
++ changeSetpoints(headingsp : double,velocitysp : double) : void
+- calcRadius() : void
+- calcWheelVel() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
