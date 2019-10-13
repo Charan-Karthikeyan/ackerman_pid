@@ -13,7 +13,7 @@
 
 class ackerman_sim{
  private:
-  double dt,posX,posY;
+  double dt,posX,posY,updatedHeading;
  public:
   /**
    * @brief A Constructor for the simulator
@@ -40,8 +40,9 @@ class ackerman_sim{
    * @brief Function to compute the heading and velocity
    * @param The steering angle computed for the car(steerAng)
    * @param The velocity of the right wheel(rWheelVel)
+   * @return The x position, y position and new heading
    */
-  double compute(double steerAng, double rWheelVel, double lWheelVel);
+  double compute(double steerAng, double rWheelVel, double lWheelVel, double &posX, double &posY, double &updatedHeading);
 
 
 };
