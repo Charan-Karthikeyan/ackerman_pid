@@ -3,7 +3,9 @@ set(GTEST_SHUFFLE 1)
 add_executable(
     cpp-test
     main.cpp
-    test.cpp
+    test_ackerman_controller.cpp
+    test_pid.cpp
+    test_ackerman_sim.cpp
 )
 
 target_include_directories(cpp-test PUBLIC ../vendor/googletest/googletest/include 
