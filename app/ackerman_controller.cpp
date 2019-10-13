@@ -18,6 +18,14 @@ void ackerman_controller::calcWheelVel(){
 
 }
 
+double ackerman_controller::getHeadingPoints(){
+
+}
+
+double ackerman_controller::getVelocityPoints(){
+
+}
+
 double ackerman_controller::compute(double headingFeedback , double &rWheelVel, double &lWheelVel){
 
 }
