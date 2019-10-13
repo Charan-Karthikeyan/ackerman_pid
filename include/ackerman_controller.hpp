@@ -33,7 +33,22 @@ class ackerman_controller{
    * @return None.
    */
   void calcWheelVel();
+
  public:
+
+  /**
+   * @brief Function to get the value of the heading setpoints
+   * @param None.
+   * @return Points of the heading.
+   */
+  double getHeadingPoints();
+
+  /**
+   * @brief Function to get the values of velocity setpoints
+   * @param None.
+   * @return Points for the Velocity points.
+   */
+  double getVelocityPoints();
 
   /**
    * @brief Function to compute the steering angle, wheel velocity of the right and left wheels
@@ -49,6 +64,6 @@ class ackerman_controller{
    * @param velocity of the set point(velocitysp)
    * @return None.
    */
-  void changeSetPoints(double headingsp, double velocitysp);
+  void setSetPoints(double headingsp, double velocitysp);
 };
 
