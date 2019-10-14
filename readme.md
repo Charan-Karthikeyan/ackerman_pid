@@ -43,7 +43,7 @@ cd <path to repository>
 g++ examples/minimal.cpp -std=c++11 -I/usr/include/python2.7 -lpython2.7
 Run Test :./a.out.
 ```
-To check integrity Run the tests, this command opens a graph.
+To check integrity Run the tests, this command opens a test graph as shown in the repo.
 
 ## Building for code coverage (for assignments beginning in Week 4)
 ```
