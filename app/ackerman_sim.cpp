@@ -17,7 +17,7 @@ ackerman_sim::ackerman_sim(double dt){
 
 }
 
-double ackerman_sim::compute(double steerAnd,double rWheelVel,double lWheelVel, double &posX, double &posY, double &updatedHeading){
+void ackerman_sim::compute(double currentHeading, double steerAnd,double rWheelVel,double lWheelVel, double &posX, double &posY, double &updatedHeading){
 
 }
 
