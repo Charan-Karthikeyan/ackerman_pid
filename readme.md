@@ -1,18 +1,29 @@
-# C++ Boilerplate
-[![Build Status](https://travis-ci.org/dpiet/cpp-boilerplate.svg?branch=master)](https://travis-ci.org/dpiet/cpp-boilerplate)
-[![Coverage Status](https://coveralls.io/repos/github/dpiet/cpp-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/dpiet/cpp-boilerplate?branch=master)
+# PID Controller for Ackermann Steering
+[![Build Status](https://travis-ci.org/ashwinvk94/ackermann_pid.svg?branch=master)](https://travis-ci.org/ashwinvk94/ackermann_pid)
+[![Coverage Status](https://coveralls.io/repos/github/ashwinvk94/ackermann_pid/badge.svg?branch=master)](https://coveralls.io/github/ashwinvk94/ackermann_pid?branch=master)
 ---
 
 ## Overview
 
-Simple starter C++ project with:
+A PID based controller for an ackermann steering system. A simulation of the ackermann model is also included to test the controller.
 
-- cmake
-- googletest
+## Agile Iterative Process
+
+[Agile Iterative Process google sheets document](https://docs.google.com/spreadsheets/d/1OC-UdeI0B-3x7UZrUb_SEa5TkO0w30IA12mvkQLu_Fg/edit#gid=0)
+
+## Install UMLet
+
+[Download UMlet files](https://www.umlet.com/download/umlet_14_3/umlet-standalone-14.3.0.zip)
+```
+Download file from link
+unzip umlet-standalone-14.3.0.zip
+cd Umlet
+Run program: java -jar umlet.jar 
+```
 
 ## Standard install via command-line
 ```
-git clone --recursive https://github.com/dpiet/cpp-boilerplate
+git clone --recursive https://github.com/ashwinvk94/ackermann_pid
 cd <path to repository>
 mkdir build
 cd build
@@ -21,6 +32,18 @@ make
 Run tests: ./test/cpp-test
 Run program: ./app/shell-app
 ```
+
+## Installation for matplotlib
+The matplotlib library is used to simulate the points generated form the 
+[Link for matplotlib repo](https://github.com/lava/matplotlib-cpp.git)
+
+```
+git clone --recursive https://github.com/lava/matplotlib-cpp.git
+cd <path to repository>
+g++ examples/minimal.cpp -std=c++11 -I/usr/include/python2.7 -lpython2.7
+Run Test :./a.out.
+```
+To check integrity Run the tests, this command opens a test graph as shown in the repo.
 
 ## Building for code coverage (for assignments beginning in Week 4)
 ```
@@ -39,7 +62,7 @@ In your Eclipse workspace directory (or create a new one), checkout the repo (an
 ```
 mkdir -p ~/workspace
 cd ~/workspace
-git clone --recursive https://github.com/dpiet/cpp-boilerplate
+git clone --recursive https://github.com/ashwinvk94/ackermann_pid
 ```
 
 In your work directory, use cmake to create an Eclipse project for an [out-of-source build] of cpp-boilerplate
