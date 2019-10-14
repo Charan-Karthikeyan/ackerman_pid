@@ -35,7 +35,7 @@ void pid::setdtMode(bool dtMode) {
 
 }
 
-void pid::setdt() {
+void pid::setdt(double dt) {
 
 }
 
