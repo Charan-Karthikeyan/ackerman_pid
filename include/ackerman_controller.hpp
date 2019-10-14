@@ -11,8 +11,9 @@
 #pragma once
 
 #include <iostream>
+#include"pid.hpp"
 
-class ackerman_controller{
+class ackerman_controller: public pid{
  private:
   double baseline,carLen, radius, rWheelVel,lWheelVel, steerAng, velocitysp, headingsp;
 
@@ -35,6 +36,14 @@ class ackerman_controller{
   void calcWheelVel();
 
  public:
+
+  /**
+     * @brief Initialize the car parameters
+     * @param distance between left and right wheels(baseline)
+     * @param distance between front and back wheels(carLength)
+     * @return
+     */
+  ackerman_controller(double baseline,double carLength);
 
   /**
    * @brief Function to get the value of the heading setpoints
