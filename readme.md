@@ -33,6 +33,18 @@ Run tests: ./test/cpp-test
 Run program: ./app/shell-app
 ```
 
+## Installation for matplotlib
+The matplotlib library is used to simulate the points generated form the 
+[Link for matplotlib repo](https://github.com/lava/matplotlib-cpp.git)
+
+```
+git clone --recursive https://github.com/lava/matplotlib-cpp.git
+cd <path to repository>
+g++ examples/minimal.cpp -std=c++11 -I/usr/include/python2.7 -lpython2.7
+Run Test :./a.out.
+```
+To check integrity Run the tests, this command opens a graph.
+
 ## Building for code coverage (for assignments beginning in Week 4)
 ```
 sudo apt-get install lcov
