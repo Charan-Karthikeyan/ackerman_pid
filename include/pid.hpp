@@ -53,7 +53,7 @@ class pid {
    * @return None.
    */
 
-  pid(double kp, double ki, double kd, double dtMode);
+  pid(double kp, double ki, double kd, bool dtMode);
 
   /**
    * @brief Destructor for the PID Controller
@@ -85,7 +85,7 @@ class pid {
    * @param set the value of time change(dtVal).
    * return None.
    */
-  void setdt();
+  void setdt(double dt);
 
   /**
    * @brief Function to set the value of setPoint for the target heading
