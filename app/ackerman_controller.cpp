@@ -10,6 +10,10 @@
 
 #include "ackerman_controller.hpp"
 
+ackerman_controller::ackerman_controller(double baseline, double carLen) {
+
+}
+
 void ackerman_controller::calcRadius(){
 
 }
@@ -30,6 +34,6 @@ double ackerman_controller::compute(double headingFeedback , double &rWheelVel, 
 
 }
 
-void ackerman_controller::changeSetPoints(double headingsp,double velocitysp){
+void ackerman_controller::setSetPoints(double headingsp,double velocitysp){
 
 }
