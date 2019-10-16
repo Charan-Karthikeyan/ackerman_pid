@@ -22,7 +22,7 @@ TEST(ValidatePIDClass,TestpidConstructor2){
 
 TEST(ValidatePIDClass,Testcompute){
   pid mypid(1,0,0);
-  double temp = mypid.setSp(12);
+  mypid.setSp(12);
   EXPECT_EQ(mypid.compute(10),-2);
 }
 
@@ -31,7 +31,7 @@ TEST(ValidatePIDClass,Testreset){
   double temp = mypid.compute(10);
   EXPECT_NE(temp, 0);
   mypid.reset();
-  double temp1 = mypid.compute(10);
+  mypid.compute(10);
   EXPECT_EQ(mypid.getPrevError(),0);
   EXPECT_EQ(mypid.getErrorSum(),0);
 }
