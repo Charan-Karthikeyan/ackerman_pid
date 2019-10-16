@@ -11,9 +11,9 @@
 
 #include<iostream>
 
-class ackerman_sim{
+class ackerman_sim {
  private:
-  double dt,posX,posY,updatedHeading;
+  double dt, posX, posY, updatedHeading;
  public:
   /**
    * @brief A Constructor for the simulator
@@ -23,10 +23,10 @@ class ackerman_sim{
   ackerman_sim();
 
   /**
-  * @brief A constructor for the ackerman simulation
-  * @param Change in time(dt)
-  * @return None.
-  */
+   * @brief A constructor for the ackerman simulation
+   * @param Change in time(dt)
+   * @return None.
+   */
   ackerman_sim(double dt);
 
   /**
@@ -37,12 +37,14 @@ class ackerman_sim{
   ~ackerman_sim();
 
   /**
-   * @brief Function to compute the heading and velocity
+   * @brief This function is called to update the vehicle heading as per the wheel velocities
+   * and the steering angle
    * @param The steering angle computed for the car(steerAng)
    * @param The velocity of the right wheel(rWheelVel)
    * @return The x position, y position and new heading
    */
-  void compute(double currentHeading, double steerAng, double rWheelVel, double lWheelVel, double &posX, double &posY, double &updatedHeading);
-
+  void compute(double currentHeading, double steerAng, double rWheelVel,
+               double lWheelVel, double &posX, double &posY,
+               double &updatedHeading, double carLen);
 
 };

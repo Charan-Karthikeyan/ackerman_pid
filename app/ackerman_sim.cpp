@@ -8,17 +8,26 @@
  */
 
 #include"ackerman_sim.hpp"
+#include <math.h>
 
-ackerman_sim::ackerman_sim(){
-
+ackerman_sim::ackerman_sim() {
+  ackerman_sim::dt = 0.01;  // default value for dt
 }
 
-ackerman_sim::ackerman_sim(double dt){
-
+ackerman_sim::ackerman_sim(double dt) {
+  ackerman_sim::dt = dt;
 }
 
-void ackerman_sim::compute(double currentHeading, double steerAnd,double rWheelVel,double lWheelVel, double &posX, double &posY, double &updatedHeading){
+void ackerman_sim::compute(double currentHeading, double steerAng,
+                           double rWheelVel, double lWheelVel, double &posX,
+                           double &posY, double &updatedHeading,
+                           double carLen) {
+  double vehVel = (rWheelVel + lWheelVel) / 2;  //vehicle center velocity
+  double turnRad = vehVel * tan(steerAng);  //calculating turning radius
+  double angVel = vehVel / turnRad;  // calculating angular velocity
 
+  posX += -vehVel * dt * sin(currentHeading);
+  posY += vehVel * dt * cos(currentHeading);
+  updatedHeading = currentHeading + angVel * dt;  //updating heading
 }
-
 
