@@ -13,11 +13,13 @@
 
 #include<iostream>
 #include<string>
+#include<chrono>
 
 class pid {
  private:
-  double kp, ki, kd, prevError, errorSum, prevTime, dtMode,dtVal;
-  double setPoint;
+  std::chrono::system_clock::time_point prevTime;
+  double kp, ki, kd, prevError, errorSum, dtVal, setPoint;
+  bool dtMode, firstRunFlag;
  public:
   /**
    * @brief Destructor for the PID Controller
@@ -55,12 +57,12 @@ class pid {
 
   pid(double kp, double ki, double kd, bool dtMode);
 
-  /**
-   * @brief Destructor for the PID Controller
-   * @param None.
-   * @return None.
-   */
-  ~pid();
+//  /**
+//   * @brief Destructor for the PID Controller
+//   * @param None.
+//   * @return None.
+//   */
+//  ~pid();
 
   /**
    * @brief Function to compute the output of the PID controller as per the equation output = Kp*Error + Ki*ErrorSum*dt + Kp*(Error-prevError)/dt
