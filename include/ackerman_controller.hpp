@@ -11,6 +11,7 @@
 #pragma once
 
 #include <iostream>
+#include <cmath>
 #include"pid.hpp"
 
 class ackerman_controller: public pid{
