@@ -53,10 +53,6 @@ pid::pid(double kp, double ki, double kd, bool dtMode) {
 
 }
 
-pid::~pid() {
-
-}
-
 double pid::compute(double feedback) {
   double currError, output, dError;
   currError = feedback - pid::setPoint;  // Calculating error

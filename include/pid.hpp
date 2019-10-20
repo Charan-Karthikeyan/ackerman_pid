@@ -21,12 +21,6 @@ class pid {
   double kp, ki, kd, prevError, errorSum, dtVal, setPoint;
   bool dtMode, firstRunFlag;
  public:
-  /**
-   * @brief Destructor for the PID Controller
-   * @param None.
-   * @return None.
-   */
-  ~pid();
 
   /**
    * @brief Constructor for the PID Controller, Initialize kp to 1, ki and kd to 0.

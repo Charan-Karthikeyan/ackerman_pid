@@ -17,6 +17,10 @@ ackerman_sim::ackerman_sim() {
   ackerman_sim::updatedHeading = 0;
 }
 
+ackerman_sim::~ackerman_sim() {
+
+}
+
 ackerman_sim::ackerman_sim(double dt) {
   ackerman_sim::dt = dt;
   ackerman_sim::posX = 0;

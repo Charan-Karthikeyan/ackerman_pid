@@ -2,7 +2,7 @@
 
 #include "ackerman_sim.hpp"
 
-TEST(VaidateAckermanController,TestCompute) {
+TEST(VaidateAckermanSim,TestCompute) {
   ackerman_sim ack_sim;
   double posX, posY, heading;
   //TODO calculate the value of and add to the EQ from the cpp file.

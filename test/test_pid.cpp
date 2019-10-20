@@ -30,7 +30,6 @@ TEST(ValidatePIDClass,Testreset) {
   double temp = mypid.compute(10);
   EXPECT_NE(temp, 0);
   mypid.reset();
-  double temp1 = mypid.compute(10);
   EXPECT_EQ(mypid.getPrevError(), 0);
   EXPECT_EQ(mypid.getErrorSum(), 0);
 
