@@ -96,7 +96,6 @@ void pid::setdt(double dt) {
 
 void pid::setSp(double setPoint) {
   pid::setPoint = setPoint;
-
 }
 
 void pid::setkp(double kp) {
@@ -105,12 +104,10 @@ void pid::setkp(double kp) {
 
 void pid::setki(double ki) {
   pid::ki = ki;
-
 }
 
 void pid::setkd(double kd) {
   pid::kd = kd;
-
 }
 
 bool pid::getdtMode() {

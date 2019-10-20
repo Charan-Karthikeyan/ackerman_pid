@@ -12,10 +12,16 @@
 
 ackerman_sim::ackerman_sim() {
   ackerman_sim::dt = 0.01;  // default value for dt
+  ackerman_sim::posX = 0;
+  ackerman_sim::posY = 0;
+  ackerman_sim::updatedHeading = 0;
 }
 
 ackerman_sim::ackerman_sim(double dt) {
   ackerman_sim::dt = dt;
+  ackerman_sim::posX = 0;
+  ackerman_sim::posY = 0;
+  ackerman_sim::updatedHeading = 0;
 }
 
 void ackerman_sim::compute(double currentHeading, double steerAng,

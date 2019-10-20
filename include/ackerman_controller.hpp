@@ -13,9 +13,10 @@
 #include <iostream>
 #include"pid.hpp"
 
-class ackerman_controller: public pid{
+class ackerman_controller : public pid {
  private:
-  double baseline,carLen, radius, rWheelVel,lWheelVel, steerAng, velocitysp, headingsp;
+  double baseline, carLen, radius, rWheelVel, lWheelVel, steerAng, velocitysp,
+      headingsp;
 
   /**
    * @brief Function to calculate the Radius of the turn given an angle
@@ -38,12 +39,12 @@ class ackerman_controller: public pid{
  public:
 
   /**
-     * @brief Initialize the car parameters
-     * @param distance between left and right wheels(baseline)
-     * @param distance between front and back wheels(carLength)
-     * @return
-     */
-  ackerman_controller(double baseline,double carLength);
+   * @brief Initialize the car parameters
+   * @param distance between left and right wheels(baseline)
+   * @param distance between front and back wheels(carLength)
+   * @return
+   */
+  ackerman_controller(double baseline, double carLength);
 
   /**
    * @brief Function to get the value of the heading setpoints
