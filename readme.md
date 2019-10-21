@@ -1,5 +1,5 @@
 # PID Controller for Ackermann Steering
-[![Build Status](https://travis-ci.org/Charan-Karthikeyan/ackerman_pid.svg?branch=iteration_1_design)](https://travis-ci.org/Charan-Karthikeyan/ackerman_pid)
+[![Build Status](https://travis-ci.org/Charan-Karthikeyan/ackerman_pid.svg?branch=master)](https://travis-ci.org/Charan-Karthikeyan/ackerman_pid)
 [![Coverage Status](https://coveralls.io/repos/github/Charan-Karthikeyan/ackerman_pid/badge.svg?branch=iteration_2_implementation)](https://coveralls.io/github/Charan-Karthikeyan/ackerman_pid?branch=iteration_2_implementation)
 ---
 
