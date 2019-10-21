@@ -22,6 +22,7 @@ Run program: java -jar umlet.jar
 ```
 
 ## Standard install via command-line
+
 ```
 git clone --recursive https://github.com/ashwinvk94/ackermann_pid
 cd <path to repository>
@@ -33,15 +34,19 @@ Run tests: ./test/cpp-test
 Run program: ./app/shell-app
 ```
 ## Cpplint check
-
+```
 cd  <path to repository>
 cpplint $( find . -name \*.hpp -or -name \*.cpp | grep -vE -e "^./build/" -e "^./vendor/" -e "^./docs/" -e "^./results" )
-
+```
 ## Cppcheck check
-
+```
 cd <path to repository>
 cppcheck --enable=all --std=c++11 -I include/ --suppress=missingIncludeSystem $( find . -name *.cpp | grep -vE -e "^./build/" -e "^./vendor/" )
+```
+## Doxygen File generation
+```
 
+```
 ## Building for code coverage (for assignments beginning in Week 4)
 ```
 sudo apt-get install lcov

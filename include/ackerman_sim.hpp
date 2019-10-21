@@ -30,7 +30,7 @@ class ackerman_sim {
    * @param Change in time(dt)
    * @return None.
    */
-  ackerman_sim(double dt);
+  explicit ackerman_sim(double dt);
 
   /**
    * @brief Destructor for the ackerman simulation
@@ -51,8 +51,8 @@ class ackerman_sim {
    * @param The updated heading of the vehicle(updatedHeading)
    * @return The x position, y position and new heading
    */
-  void compute(double steerAng, double rWheelVel, double lWheelVel,
-               double &posX, double &posY, double &updatedHeading,
+  void compute(double *steerAng, double *rWheelVel, double *lWheelVel,
+               double *posX, double *posY, double *updatedHeading,
                double carLen);
 };
 

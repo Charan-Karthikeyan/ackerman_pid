@@ -27,23 +27,23 @@ ackerman_sim::ackerman_sim(double dt) {
   ackerman_sim::updatedHeading = 0;
 }
 
-void ackerman_sim::compute(double steerAng, double rWheelVel, double lWheelVel,
-                           double &posX, double &posY, double &heading,
+void ackerman_sim::compute(double *steerAng, double *rWheelVel, double *lWheelVel,
+                           double *posX, double *posY, double *heading,
                            double carLen) {
   // vehicle center velocity
-  double vehVel = (rWheelVel + lWheelVel) / 2*carLen;
-  if (steerAng > (3.14 / 4))
-    steerAng = 3.14 / 4;
-  else if (steerAng < (-3.14 / 4))
-    steerAng = -3.14 / 4;
+  double vehVel = (*rWheelVel + *lWheelVel) / 2*carLen;
+  if (*steerAng > (3.14 / 4))
+    *steerAng = 3.14 / 4;
+  else if (*steerAng < (-3.14 / 4))
+    *steerAng = -3.14 / 4;
 
-  if (steerAng != 0) {
+  if (*steerAng != 0) {
     // calculating turning radius
-    double turnRad = vehVel * tan((3.14 / 2) - steerAng);
+    double turnRad = vehVel * tan((3.14 / 2) - *steerAng);
     double angVel = vehVel / turnRad;  // calculating angular velocity
-    heading = heading + angVel * dt;  // updating heading
+    *heading = *heading + angVel * dt;  // updating heading
   }
-  posX += -vehVel * dt * sin(heading);
-  posY += vehVel * dt * cos(heading);
+  *posX += -vehVel * dt * sin(*heading);
+  *posY += vehVel * dt * cos(*heading);
 }
 

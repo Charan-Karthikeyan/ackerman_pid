@@ -16,7 +16,17 @@
  */
 TEST(VaidateAckermanSim, TestCompute) {
   ackerman_sim ack_sim;
-  double posX, posY, heading = 1;
-  ack_sim.compute(10, 1, 1, posX, posY, heading, 1);
-  EXPECT_NEAR(heading, 1, 1);
+  double posX = 1,posY=1,heading=1;
+  double *posXptr = &posX;
+  double *posYptr = &posY;
+  double *headingptr = &heading;
+  double carLen = 1;
+
+
+  double steering = 10,left=1,right=1;
+  double *steeringptr = &steering;
+  double *leftptr = &left;
+  double *rightptr = &right;
+  ack_sim.compute(steeringptr, leftptr, rightptr, posXptr, posYptr, headingptr, carLen);
+  EXPECT_NEAR(*headingptr, 1, 1);
 }
