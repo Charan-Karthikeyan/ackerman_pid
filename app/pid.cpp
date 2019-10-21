@@ -34,7 +34,6 @@ pid::pid(double kp, double ki, double kd) {
   pid::dtVal = 0.1;
   pid::setPoint = 0;
   pid::firstRunFlag = true;
-
 }
 
 pid::pid(double kp, double ki, double kd, bool dtMode) {
@@ -48,7 +47,6 @@ pid::pid(double kp, double ki, double kd, bool dtMode) {
   pid::dtVal = 0.1;
   pid::setPoint = 0;
   pid::firstRunFlag = true;
-
 }
 
 double pid::compute(double feedback) {
@@ -58,18 +56,17 @@ double pid::compute(double feedback) {
   dError = currError - pid::prevError;
 
   if (pid::firstRunFlag == false) {
-
-    //updating dtVal
+    // Updating dtVal
     if (pid::dtMode == false) {
       std::chrono::system_clock::time_point currTime =
           std::chrono::system_clock::now();
       std::chrono::duration<double> elapsed_seconds;
       elapsed_seconds = currTime - pid::prevTime;
-      pid::dtVal = elapsed_seconds.count();  //updating dt
+      pid::dtVal = elapsed_seconds.count();  // Updating dt
     }
-
+    // Calculating the pid output
     output = pid::kp * currError + pid::ki * pid::errorSum * pid::dtVal
-        + pid::kd * dError / pid::dtVal;  // Calculating the pid output
+        + pid::kd * dError / pid::dtVal;
 
   } else {
     output = pid::kp * currError;

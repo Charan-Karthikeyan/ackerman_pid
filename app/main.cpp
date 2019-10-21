@@ -3,6 +3,7 @@
  * @author Ashwin Varghese Kuruttukulam
  * @author Charan Karthikeyan
  * @brief Main program that runs the pid, ackerman controller and the ackerman simulation classes.
+ *
  * @Copyright "Copyright 2019 <Ashwin Varghese Kuruttukulam>
  * @Copyright "Copyright 2019 <Charan Karthikeyan>
  */
@@ -10,19 +11,18 @@
 #include "ackerman_controller.hpp"
 #include "ackerman_sim.hpp"
 int main() {
-
-  //PID tuning parameters
+  // PID tuning parameters
   double kp = -10, ki = 0, kd = 0;
 
-  //Heading and velocity to be achieved
+  // Heading and velocity to be achieved
   double headingSp = 2, velSp = 1;
 
-  //Initializing simulation
+  // Initializing simulation
   double nIterations = 40, temp;
   double simulationTime = 0.05;
   ackerman_sim simObj(simulationTime);
 
-  //Initializing ackermann controller
+  // Initializing ackermann controller
   double heading = 1, baseLine = 1, carLen = 1, posX = 0, posY = 0;
   ackerman_controller ackermanObj(baseLine, carLen, kp, ki, kd, true,
                                   simulationTime);
@@ -33,7 +33,7 @@ int main() {
   std::cin >> temp;
   double lVel = velSp / 2, rVel = velSp / 2, steer = 0;
 
-  //running simulation
+  // Running simulation
   for (int k = 1; k < nIterations; k++) {
     std::cout << "New Sim : \t " << k << std::endl;
     simObj.compute(steer, lVel, rVel, posX, posY, heading, carLen);
@@ -44,5 +44,4 @@ int main() {
               << std::endl;
   }
   return 0;
-
 }
