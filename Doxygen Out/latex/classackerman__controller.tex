@@ -1,0 +1,233 @@
+\hypertarget{classackerman__controller}{}\section{ackerman\+\_\+controller Class Reference}
+\label{classackerman__controller}\index{ackerman\+\_\+controller@{ackerman\+\_\+controller}}
+
+
+Inheritance diagram for ackerman\+\_\+controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classackerman__controller__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ackerman\+\_\+controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classackerman__controller__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classackerman__controller_a2501aaf8866f31033b029135e9a07a06}{ackerman\+\_\+controller} (double baseline, double car\+Length)
+\begin{DoxyCompactList}\small\item\em Initialize the car parameters. \end{DoxyCompactList}\item 
+\hyperlink{classackerman__controller_a8ce4def42fb84ddd2d0ead34b99c0724}{ackerman\+\_\+controller} (double baseline, double car\+Len, double kp, double ki, double kd, bool dt\+Mode, double dt)
+\begin{DoxyCompactList}\small\item\em Second Constructor to initialize all the parameters. \end{DoxyCompactList}\item 
+double \hyperlink{classackerman__controller_a5638d86309c34d185bed37275c153c65}{get\+Heading\+Points} ()
+\begin{DoxyCompactList}\small\item\em Function to get the value of the heading setpoints. \end{DoxyCompactList}\item 
+double \hyperlink{classackerman__controller_aaf95cf16e95bce3a68625e7f7d57c45e}{get\+Velocity\+Points} ()
+\begin{DoxyCompactList}\small\item\em Function to get the values of velocity setpoints. \end{DoxyCompactList}\item 
+double \hyperlink{classackerman__controller_a2b08918e113a5ae0ebd1b976801bec7c}{run} (double heading\+Feedback, double \&r\+Wheel\+Vel, double \&l\+Wheel\+Vel)
+\begin{DoxyCompactList}\small\item\em Function to compute the steering angle, wheel velocity of the right and left wheels. \end{DoxyCompactList}\item 
+void \hyperlink{classackerman__controller_aba2b7c99bcdcd50e5ea36012fe849000}{set\+Set\+Points} (double headingsp, double velocitysp)
+\begin{DoxyCompactList}\small\item\em Function to update the target points. \end{DoxyCompactList}\item 
+double \hyperlink{classackerman__controller_a44b85e8dceca2ec8112c5bc87d16d319}{get\+Base\+Line} ()
+\begin{DoxyCompactList}\small\item\em Function to get the value of baseline (for testing purpose only) \end{DoxyCompactList}\item 
+double \hyperlink{classackerman__controller_a206a0b3afc07d1f12769f2a75515c7e8}{get\+Car\+Len} ()
+\begin{DoxyCompactList}\small\item\em Function to return the value of car length (For testing purpose only) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{ackerman\+\_\+controller@{ackerman\+\_\+controller}!ackerman\+\_\+controller@{ackerman\+\_\+controller}}
+\index{ackerman\+\_\+controller@{ackerman\+\_\+controller}!ackerman\+\_\+controller@{ackerman\+\_\+controller}}
+\subsubsection[{\texorpdfstring{ackerman\+\_\+controller(double baseline, double car\+Length)}{ackerman_controller(double baseline, double carLength)}}]{\setlength{\rightskip}{0pt plus 5cm}ackerman\+\_\+controller\+::ackerman\+\_\+controller (
+\begin{DoxyParamCaption}
+\item[{double}]{baseline, }
+\item[{double}]{car\+Length}
+\end{DoxyParamCaption}
+)}\hypertarget{classackerman__controller_a2501aaf8866f31033b029135e9a07a06}{}\label{classackerman__controller_a2501aaf8866f31033b029135e9a07a06}
+
+
+Initialize the car parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em distance} & between left and right wheels(baseline) \\
+\hline
+{\em distance} & between front and back wheels(car\+Length) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\index{ackerman\+\_\+controller@{ackerman\+\_\+controller}!ackerman\+\_\+controller@{ackerman\+\_\+controller}}
+\index{ackerman\+\_\+controller@{ackerman\+\_\+controller}!ackerman\+\_\+controller@{ackerman\+\_\+controller}}
+\subsubsection[{\texorpdfstring{ackerman\+\_\+controller(double baseline, double car\+Len, double kp, double ki, double kd, bool dt\+Mode, double dt)}{ackerman_controller(double baseline, double carLen, double kp, double ki, double kd, bool dtMode, double dt)}}]{\setlength{\rightskip}{0pt plus 5cm}ackerman\+\_\+controller\+::ackerman\+\_\+controller (
+\begin{DoxyParamCaption}
+\item[{double}]{baseline, }
+\item[{double}]{car\+Len, }
+\item[{double}]{kp, }
+\item[{double}]{ki, }
+\item[{double}]{kd, }
+\item[{bool}]{dt\+Mode, }
+\item[{double}]{dt}
+\end{DoxyParamCaption}
+)}\hypertarget{classackerman__controller_a8ce4def42fb84ddd2d0ead34b99c0724}{}\label{classackerman__controller_a8ce4def42fb84ddd2d0ead34b99c0724}
+
+
+Second Constructor to initialize all the parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em The} & distance between the two wheels of a car(baseline) \\
+\hline
+{\em The} & distance between the front and back of the vehicle(car\+Len) \\
+\hline
+{\em The} & integral gain(ki) \\
+\hline
+{\em The} & Propotional gain(kp) \\
+\hline
+{\em The} & differential gain(kd) \\
+\hline
+{\em The} & mode of operation for the \hyperlink{classpid}{pid(dt\+Mode)} true for automatic and false for manual. \\
+\hline
+{\em The} & change in time (dt) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\index{ackerman\+\_\+controller@{ackerman\+\_\+controller}!get\+Base\+Line@{get\+Base\+Line}}
+\index{get\+Base\+Line@{get\+Base\+Line}!ackerman\+\_\+controller@{ackerman\+\_\+controller}}
+\subsubsection[{\texorpdfstring{get\+Base\+Line()}{getBaseLine()}}]{\setlength{\rightskip}{0pt plus 5cm}double ackerman\+\_\+controller\+::get\+Base\+Line (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classackerman__controller_a44b85e8dceca2ec8112c5bc87d16d319}{}\label{classackerman__controller_a44b85e8dceca2ec8112c5bc87d16d319}
+
+
+Function to get the value of baseline (for testing purpose only) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value baseline 
+\end{DoxyReturn}
+\index{ackerman\+\_\+controller@{ackerman\+\_\+controller}!get\+Car\+Len@{get\+Car\+Len}}
+\index{get\+Car\+Len@{get\+Car\+Len}!ackerman\+\_\+controller@{ackerman\+\_\+controller}}
+\subsubsection[{\texorpdfstring{get\+Car\+Len()}{getCarLen()}}]{\setlength{\rightskip}{0pt plus 5cm}double ackerman\+\_\+controller\+::get\+Car\+Len (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classackerman__controller_a206a0b3afc07d1f12769f2a75515c7e8}{}\label{classackerman__controller_a206a0b3afc07d1f12769f2a75515c7e8}
+
+
+Function to return the value of car length (For testing purpose only) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of the length of the car 
+\end{DoxyReturn}
+\index{ackerman\+\_\+controller@{ackerman\+\_\+controller}!get\+Heading\+Points@{get\+Heading\+Points}}
+\index{get\+Heading\+Points@{get\+Heading\+Points}!ackerman\+\_\+controller@{ackerman\+\_\+controller}}
+\subsubsection[{\texorpdfstring{get\+Heading\+Points()}{getHeadingPoints()}}]{\setlength{\rightskip}{0pt plus 5cm}double ackerman\+\_\+controller\+::get\+Heading\+Points (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classackerman__controller_a5638d86309c34d185bed37275c153c65}{}\label{classackerman__controller_a5638d86309c34d185bed37275c153c65}
+
+
+Function to get the value of the heading setpoints. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Points of the heading. 
+\end{DoxyReturn}
+\index{ackerman\+\_\+controller@{ackerman\+\_\+controller}!get\+Velocity\+Points@{get\+Velocity\+Points}}
+\index{get\+Velocity\+Points@{get\+Velocity\+Points}!ackerman\+\_\+controller@{ackerman\+\_\+controller}}
+\subsubsection[{\texorpdfstring{get\+Velocity\+Points()}{getVelocityPoints()}}]{\setlength{\rightskip}{0pt plus 5cm}double ackerman\+\_\+controller\+::get\+Velocity\+Points (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classackerman__controller_aaf95cf16e95bce3a68625e7f7d57c45e}{}\label{classackerman__controller_aaf95cf16e95bce3a68625e7f7d57c45e}
+
+
+Function to get the values of velocity setpoints. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Points for the Velocity points. 
+\end{DoxyReturn}
+\index{ackerman\+\_\+controller@{ackerman\+\_\+controller}!run@{run}}
+\index{run@{run}!ackerman\+\_\+controller@{ackerman\+\_\+controller}}
+\subsubsection[{\texorpdfstring{run(double heading\+Feedback, double \&r\+Wheel\+Vel, double \&l\+Wheel\+Vel)}{run(double headingFeedback, double &rWheelVel, double &lWheelVel)}}]{\setlength{\rightskip}{0pt plus 5cm}double ackerman\+\_\+controller\+::run (
+\begin{DoxyParamCaption}
+\item[{double}]{heading\+Feedback, }
+\item[{double \&}]{r\+Wheel\+Vel, }
+\item[{double \&}]{l\+Wheel\+Vel}
+\end{DoxyParamCaption}
+)}\hypertarget{classackerman__controller_a2b08918e113a5ae0ebd1b976801bec7c}{}\label{classackerman__controller_a2b08918e113a5ae0ebd1b976801bec7c}
+
+
+Function to compute the steering angle, wheel velocity of the right and left wheels. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em The} & feedback about the heading from the P\+ID controller(heading\+Feedback). \\
+\hline
+{\em The} & velocity of the right and left wheels(r\+Wheel\+Vel, l\+Wheel\+Vel)(only for testing we use these values) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The values of steering angle, the velocity of the right and left wheels. 
+\end{DoxyReturn}
+\index{ackerman\+\_\+controller@{ackerman\+\_\+controller}!set\+Set\+Points@{set\+Set\+Points}}
+\index{set\+Set\+Points@{set\+Set\+Points}!ackerman\+\_\+controller@{ackerman\+\_\+controller}}
+\subsubsection[{\texorpdfstring{set\+Set\+Points(double headingsp, double velocitysp)}{setSetPoints(double headingsp, double velocitysp)}}]{\setlength{\rightskip}{0pt plus 5cm}void ackerman\+\_\+controller\+::set\+Set\+Points (
+\begin{DoxyParamCaption}
+\item[{double}]{headingsp, }
+\item[{double}]{velocitysp}
+\end{DoxyParamCaption}
+)}\hypertarget{classackerman__controller_aba2b7c99bcdcd50e5ea36012fe849000}{}\label{classackerman__controller_aba2b7c99bcdcd50e5ea36012fe849000}
+
+
+Function to update the target points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em heading} & set point of the target point(headingsp) \\
+\hline
+{\em velocity} & of the set point(velocitysp) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/ackerman\+\_\+controller.\+hpp\item 
+app/\hyperlink{ackerman__controller_8cpp}{ackerman\+\_\+controller.\+cpp}\end{DoxyCompactItemize}

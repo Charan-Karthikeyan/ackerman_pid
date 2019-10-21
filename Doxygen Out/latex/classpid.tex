@@ -1,0 +1,440 @@
+\hypertarget{classpid}{}\section{pid Class Reference}
+\label{classpid}\index{pid@{pid}}
+
+
+Inheritance diagram for pid\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classpid__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpid_a8cb9ff8fa0e7162d275990d01fb1588d}{pid} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the P\+ID Controller, Initialize kp to 1, ki and kd to 0. \end{DoxyCompactList}\item 
+\hyperlink{classpid_aca31b4446bc7cafef37bf0ed799433c5}{pid} (double kp, double ki, double kd)
+\begin{DoxyCompactList}\small\item\em Initialize the pid gain parameters to the parameter values. \end{DoxyCompactList}\item 
+\hyperlink{classpid_afa844eff521e7d10d13008bb1befe6fe}{pid} (double kp, double ki, double kd, bool dt\+Mode)
+\begin{DoxyCompactList}\small\item\em Initialize the pid gain parameters to the parameter values and set the dt mode type dt\+Mode = true means that the user will set the dt value and ensure that the compute function is called at every dt seconds. \end{DoxyCompactList}\item 
+double \hyperlink{classpid_a3cd146c6f8b82f884106d1686b74f095}{compute} (double feedback)
+\begin{DoxyCompactList}\small\item\em Destructor for the P\+ID Controller. \end{DoxyCompactList}\item 
+void \hyperlink{classpid_ad79422e5b67012c47eb967606343df35}{setdt\+Mode} (bool dt\+Mode)
+\begin{DoxyCompactList}\small\item\em Function to set the value of bool to trigger automatic or manual setting of dt of the P\+ID controller. \end{DoxyCompactList}\item 
+void \hyperlink{classpid_a6c035fb6eaa1ec6a4113c318571bfd8b}{setdt} (double dt)
+\begin{DoxyCompactList}\small\item\em Function to set the value of the change in time value. \end{DoxyCompactList}\item 
+void \hyperlink{classpid_a08673f8deebcfd4ff97c7794739a1a5a}{set\+Sp} (double set\+Point)
+\begin{DoxyCompactList}\small\item\em Function to set the value of set\+Point for the target heading. \end{DoxyCompactList}\item 
+void \hyperlink{classpid_a4ceef80aa2e2e6dc49eead967c288f26}{setkp} (double)
+\begin{DoxyCompactList}\small\item\em Function to set the value of Proportional Gain of the P\+ID controller. \end{DoxyCompactList}\item 
+void \hyperlink{classpid_a98faeb432f25a5729fc8a48ade1ed6de}{setki} (double)
+\begin{DoxyCompactList}\small\item\em Function to set the value of Integral Gain of the P\+ID controller. \end{DoxyCompactList}\item 
+void \hyperlink{classpid_ae062827b4cb59a99e941d23cca3eb677}{setkd} (double)
+\begin{DoxyCompactList}\small\item\em Function to set the value for Differential Gain of the P\+ID controller. \end{DoxyCompactList}\item 
+bool \hyperlink{classpid_a2c94e73a942950ebefe98863bb391cbf}{getdt\+Mode} ()
+\begin{DoxyCompactList}\small\item\em returns the value of boolean of the change in time mode for the controller \end{DoxyCompactList}\item 
+double \hyperlink{classpid_a9b541ca0e6644a20c89d4c84922cf63a}{getdt} ()
+\begin{DoxyCompactList}\small\item\em returns the value of the change in time set. \end{DoxyCompactList}\item 
+double \hyperlink{classpid_a7c38309ebf1be92157ca45103ca15c6a}{get\+Sp} ()
+\begin{DoxyCompactList}\small\item\em returns the value of set\+Point for the target heading \end{DoxyCompactList}\item 
+double \hyperlink{classpid_a019f96dceec59007fa9823f56e8e9dd1}{getkp} ()
+\begin{DoxyCompactList}\small\item\em Function to get the value of Proportional Gain of the P\+ID controller. \end{DoxyCompactList}\item 
+double \hyperlink{classpid_a55be3ce4dfbf2527c92a05e2e6fdeb99}{getki} ()
+\begin{DoxyCompactList}\small\item\em returns the value of the Integral Gain of the P\+ID controller \end{DoxyCompactList}\item 
+double \hyperlink{classpid_aa1e0dfeb8630d336d00effeb2821a44e}{get\+Error\+Sum} ()
+\begin{DoxyCompactList}\small\item\em Function to return the value of the error sum and test purposes. \end{DoxyCompactList}\item 
+double \hyperlink{classpid_a5a03d1dffdb5b46d8b069a7a15aba033}{getkd} ()
+\begin{DoxyCompactList}\small\item\em returns the value of the Differential Gain of the P\+ID controller \end{DoxyCompactList}\item 
+double \hyperlink{classpid_a2ecb768afc444a7d65a56ae5d386d15e}{get\+Prev\+Error} ()
+\begin{DoxyCompactList}\small\item\em Function to return the value of previous error for testing purposes. \end{DoxyCompactList}\item 
+void \hyperlink{classpid_a06e0eda908ef2c8904135caeb56fd3e0}{reset} ()
+\begin{DoxyCompactList}\small\item\em Function to reset the integral term to zero. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{pid@{pid}!pid@{pid}}
+\index{pid@{pid}!pid@{pid}}
+\subsubsection[{\texorpdfstring{pid()}{pid()}}]{\setlength{\rightskip}{0pt plus 5cm}pid\+::pid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classpid_a8cb9ff8fa0e7162d275990d01fb1588d}{}\label{classpid_a8cb9ff8fa0e7162d275990d01fb1588d}
+
+
+Constructor for the P\+ID Controller, Initialize kp to 1, ki and kd to 0. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}
+\index{pid@{pid}!pid@{pid}}
+\index{pid@{pid}!pid@{pid}}
+\subsubsection[{\texorpdfstring{pid(double kp, double ki, double kd)}{pid(double kp, double ki, double kd)}}]{\setlength{\rightskip}{0pt plus 5cm}pid\+::pid (
+\begin{DoxyParamCaption}
+\item[{double}]{kp, }
+\item[{double}]{ki, }
+\item[{double}]{kd}
+\end{DoxyParamCaption}
+)}\hypertarget{classpid_aca31b4446bc7cafef37bf0ed799433c5}{}\label{classpid_aca31b4446bc7cafef37bf0ed799433c5}
+
+
+Initialize the pid gain parameters to the parameter values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kp} & Proportional Gain of P\+ID controller. \\
+\hline
+{\em ki} & Integral Gain of P\+ID controller. \\
+\hline
+{\em kd} & Differential Gain of P\+ID controller. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}
+\index{pid@{pid}!pid@{pid}}
+\index{pid@{pid}!pid@{pid}}
+\subsubsection[{\texorpdfstring{pid(double kp, double ki, double kd, bool dt\+Mode)}{pid(double kp, double ki, double kd, bool dtMode)}}]{\setlength{\rightskip}{0pt plus 5cm}pid\+::pid (
+\begin{DoxyParamCaption}
+\item[{double}]{kp, }
+\item[{double}]{ki, }
+\item[{double}]{kd, }
+\item[{bool}]{dt\+Mode}
+\end{DoxyParamCaption}
+)}\hypertarget{classpid_afa844eff521e7d10d13008bb1befe6fe}{}\label{classpid_afa844eff521e7d10d13008bb1befe6fe}
+
+
+Initialize the pid gain parameters to the parameter values and set the dt mode type dt\+Mode = true means that the user will set the dt value and ensure that the compute function is called at every dt seconds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kp} & Proportional Gain of P\+ID controller. \\
+\hline
+{\em ki} & Integral Gain of P\+ID controller. \\
+\hline
+{\em kd} & Differential Gain of P\+ID controller. \\
+\hline
+{\em dt\+Mode} & Mode in which the pid controller works. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\index{pid@{pid}!compute@{compute}}
+\index{compute@{compute}!pid@{pid}}
+\subsubsection[{\texorpdfstring{compute(double feedback)}{compute(double feedback)}}]{\setlength{\rightskip}{0pt plus 5cm}double pid\+::compute (
+\begin{DoxyParamCaption}
+\item[{double}]{feedback}
+\end{DoxyParamCaption}
+)}\hypertarget{classpid_a3cd146c6f8b82f884106d1686b74f095}{}\label{classpid_a3cd146c6f8b82f884106d1686b74f095}
+
+
+Destructor for the P\+ID Controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. Function to compute the output of the P\+ID controller as per the equation output = Kp$\ast$\+Error + Ki$\ast$\+Error\+Sum$\ast$dt + Kp$\ast$(Error-\/prev\+Error)/dt If this function is being called for the first time after the initialization of the class, the prev\+Time variable should be set to the current time. Also the derivative and integral term will not be used in the output equation during the first call of this function, because prev\+Time and prev\+Error is not available. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em feedback} & Measured state value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pid\+Out Output calculated by the P\+ID controller with the equation. 
+\end{DoxyReturn}
+\index{pid@{pid}!getdt@{getdt}}
+\index{getdt@{getdt}!pid@{pid}}
+\subsubsection[{\texorpdfstring{getdt()}{getdt()}}]{\setlength{\rightskip}{0pt plus 5cm}double pid\+::getdt (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classpid_a9b541ca0e6644a20c89d4c84922cf63a}{}\label{classpid_a9b541ca0e6644a20c89d4c84922cf63a}
+
+
+returns the value of the change in time set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None.} & return The value of change in time(dt\+Val) \\
+\hline
+\end{DoxyParams}
+\index{pid@{pid}!getdt\+Mode@{getdt\+Mode}}
+\index{getdt\+Mode@{getdt\+Mode}!pid@{pid}}
+\subsubsection[{\texorpdfstring{getdt\+Mode()}{getdtMode()}}]{\setlength{\rightskip}{0pt plus 5cm}bool pid\+::getdt\+Mode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classpid_a2c94e73a942950ebefe98863bb391cbf}{}\label{classpid_a2c94e73a942950ebefe98863bb391cbf}
+
+
+returns the value of boolean of the change in time mode for the controller 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The state of the boolean(dt\+Mode) 
+\end{DoxyReturn}
+\index{pid@{pid}!get\+Error\+Sum@{get\+Error\+Sum}}
+\index{get\+Error\+Sum@{get\+Error\+Sum}!pid@{pid}}
+\subsubsection[{\texorpdfstring{get\+Error\+Sum()}{getErrorSum()}}]{\setlength{\rightskip}{0pt plus 5cm}double pid\+::get\+Error\+Sum (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classpid_aa1e0dfeb8630d336d00effeb2821a44e}{}\label{classpid_aa1e0dfeb8630d336d00effeb2821a44e}
+
+
+Function to return the value of the error sum and test purposes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error sum value(error\+Sum) 
+\end{DoxyReturn}
+\index{pid@{pid}!getkd@{getkd}}
+\index{getkd@{getkd}!pid@{pid}}
+\subsubsection[{\texorpdfstring{getkd()}{getkd()}}]{\setlength{\rightskip}{0pt plus 5cm}double pid\+::getkd (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classpid_a5a03d1dffdb5b46d8b069a7a15aba033}{}\label{classpid_a5a03d1dffdb5b46d8b069a7a15aba033}
+
+
+returns the value of the Differential Gain of the P\+ID controller 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Differential Gain(kd) 
+\end{DoxyReturn}
+\index{pid@{pid}!getki@{getki}}
+\index{getki@{getki}!pid@{pid}}
+\subsubsection[{\texorpdfstring{getki()}{getki()}}]{\setlength{\rightskip}{0pt plus 5cm}double pid\+::getki (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classpid_a55be3ce4dfbf2527c92a05e2e6fdeb99}{}\label{classpid_a55be3ce4dfbf2527c92a05e2e6fdeb99}
+
+
+returns the value of the Integral Gain of the P\+ID controller 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Integral Gain(ki) 
+\end{DoxyReturn}
+\index{pid@{pid}!getkp@{getkp}}
+\index{getkp@{getkp}!pid@{pid}}
+\subsubsection[{\texorpdfstring{getkp()}{getkp()}}]{\setlength{\rightskip}{0pt plus 5cm}double pid\+::getkp (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classpid_a019f96dceec59007fa9823f56e8e9dd1}{}\label{classpid_a019f96dceec59007fa9823f56e8e9dd1}
+
+
+Function to get the value of Proportional Gain of the P\+ID controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Proportional Gain(kp) 
+\end{DoxyReturn}
+\index{pid@{pid}!get\+Prev\+Error@{get\+Prev\+Error}}
+\index{get\+Prev\+Error@{get\+Prev\+Error}!pid@{pid}}
+\subsubsection[{\texorpdfstring{get\+Prev\+Error()}{getPrevError()}}]{\setlength{\rightskip}{0pt plus 5cm}double pid\+::get\+Prev\+Error (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classpid_a2ecb768afc444a7d65a56ae5d386d15e}{}\label{classpid_a2ecb768afc444a7d65a56ae5d386d15e}
+
+
+Function to return the value of previous error for testing purposes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Previous error value(prev\+Error). 
+\end{DoxyReturn}
+\index{pid@{pid}!get\+Sp@{get\+Sp}}
+\index{get\+Sp@{get\+Sp}!pid@{pid}}
+\subsubsection[{\texorpdfstring{get\+Sp()}{getSp()}}]{\setlength{\rightskip}{0pt plus 5cm}double pid\+::get\+Sp (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classpid_a7c38309ebf1be92157ca45103ca15c6a}{}\label{classpid_a7c38309ebf1be92157ca45103ca15c6a}
+
+
+returns the value of set\+Point for the target heading 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The target heading(set\+Point). 
+\end{DoxyReturn}
+\index{pid@{pid}!reset@{reset}}
+\index{reset@{reset}!pid@{pid}}
+\subsubsection[{\texorpdfstring{reset()}{reset()}}]{\setlength{\rightskip}{0pt plus 5cm}void pid\+::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classpid_a06e0eda908ef2c8904135caeb56fd3e0}{}\label{classpid_a06e0eda908ef2c8904135caeb56fd3e0}
+
+
+Function to reset the integral term to zero. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None.} & return None. \\
+\hline
+\end{DoxyParams}
+\index{pid@{pid}!setdt@{setdt}}
+\index{setdt@{setdt}!pid@{pid}}
+\subsubsection[{\texorpdfstring{setdt(double dt)}{setdt(double dt)}}]{\setlength{\rightskip}{0pt plus 5cm}void pid\+::setdt (
+\begin{DoxyParamCaption}
+\item[{double}]{dt}
+\end{DoxyParamCaption}
+)}\hypertarget{classpid_a6c035fb6eaa1ec6a4113c318571bfd8b}{}\label{classpid_a6c035fb6eaa1ec6a4113c318571bfd8b}
+
+
+Function to set the value of the change in time value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em set} & the value of time change(dt\+Val). return None. \\
+\hline
+\end{DoxyParams}
+\index{pid@{pid}!setdt\+Mode@{setdt\+Mode}}
+\index{setdt\+Mode@{setdt\+Mode}!pid@{pid}}
+\subsubsection[{\texorpdfstring{setdt\+Mode(bool dt\+Mode)}{setdtMode(bool dtMode)}}]{\setlength{\rightskip}{0pt plus 5cm}void pid\+::setdt\+Mode (
+\begin{DoxyParamCaption}
+\item[{bool}]{dt\+Mode}
+\end{DoxyParamCaption}
+)}\hypertarget{classpid_ad79422e5b67012c47eb967606343df35}{}\label{classpid_ad79422e5b67012c47eb967606343df35}
+
+
+Function to set the value of bool to trigger automatic or manual setting of dt of the P\+ID controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em set} & the boolean for control(dt\+Mode). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}
+\index{pid@{pid}!setkd@{setkd}}
+\index{setkd@{setkd}!pid@{pid}}
+\subsubsection[{\texorpdfstring{setkd(double)}{setkd(double)}}]{\setlength{\rightskip}{0pt plus 5cm}void pid\+::setkd (
+\begin{DoxyParamCaption}
+\item[{double}]{kd}
+\end{DoxyParamCaption}
+)}\hypertarget{classpid_ae062827b4cb59a99e941d23cca3eb677}{}\label{classpid_ae062827b4cb59a99e941d23cca3eb677}
+
+
+Function to set the value for Differential Gain of the P\+ID controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Differential} & Gain (kd) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}
+\index{pid@{pid}!setki@{setki}}
+\index{setki@{setki}!pid@{pid}}
+\subsubsection[{\texorpdfstring{setki(double)}{setki(double)}}]{\setlength{\rightskip}{0pt plus 5cm}void pid\+::setki (
+\begin{DoxyParamCaption}
+\item[{double}]{ki}
+\end{DoxyParamCaption}
+)}\hypertarget{classpid_a98faeb432f25a5729fc8a48ade1ed6de}{}\label{classpid_a98faeb432f25a5729fc8a48ade1ed6de}
+
+
+Function to set the value of Integral Gain of the P\+ID controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Integral} & Gain (ki) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}
+\index{pid@{pid}!setkp@{setkp}}
+\index{setkp@{setkp}!pid@{pid}}
+\subsubsection[{\texorpdfstring{setkp(double)}{setkp(double)}}]{\setlength{\rightskip}{0pt plus 5cm}void pid\+::setkp (
+\begin{DoxyParamCaption}
+\item[{double}]{kp}
+\end{DoxyParamCaption}
+)}\hypertarget{classpid_a4ceef80aa2e2e6dc49eead967c288f26}{}\label{classpid_a4ceef80aa2e2e6dc49eead967c288f26}
+
+
+Function to set the value of Proportional Gain of the P\+ID controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Proportional} & Gain(kp) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}
+\index{pid@{pid}!set\+Sp@{set\+Sp}}
+\index{set\+Sp@{set\+Sp}!pid@{pid}}
+\subsubsection[{\texorpdfstring{set\+Sp(double set\+Point)}{setSp(double setPoint)}}]{\setlength{\rightskip}{0pt plus 5cm}void pid\+::set\+Sp (
+\begin{DoxyParamCaption}
+\item[{double}]{set\+Point}
+\end{DoxyParamCaption}
+)}\hypertarget{classpid_a08673f8deebcfd4ff97c7794739a1a5a}{}\label{classpid_a08673f8deebcfd4ff97c7794739a1a5a}
+
+
+Function to set the value of set\+Point for the target heading. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em set\+Point} & Target Heading value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{pid_8hpp}{pid.\+hpp}\item 
+app/\hyperlink{pid_8cpp}{pid.\+cpp}\end{DoxyCompactItemize}

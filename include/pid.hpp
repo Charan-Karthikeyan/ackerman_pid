@@ -9,23 +9,20 @@
  * @Copyright "Copyright 2019 <Ashwin Vargheese Kuruttukulam>
  * @Copyright "Copyright 2019 <Charan Karthikeyan>
  */
-#pragma once
+#ifndef INCLUDE_PID_HPP_
+#define INCLUDE_PID_HPP_
 
 #include<iostream>
 #include<string>
+#include<chrono>
 
 class pid {
  private:
-  double kp, ki, kd, prevError, errorSum, prevTime, dtMode,dtVal;
-  double setPoint;
- public:
-  /**
-   * @brief Destructor for the PID Controller
-   * @param None.
-   * @return None.
-   */
-  ~pid();
+  std::chrono::system_clock::time_point prevTime;
+  double kp, ki, kd, prevError, errorSum, dtVal, setPoint;
+  bool dtMode, firstRunFlag;
 
+ public:
   /**
    * @brief Constructor for the PID Controller, Initialize kp to 1, ki and kd to 0.
    * @param None.
@@ -55,12 +52,12 @@ class pid {
 
   pid(double kp, double ki, double kd, bool dtMode);
 
-  /**
-   * @brief Destructor for the PID Controller
-   * @param None.
-   * @return None.
-   */
-  ~pid();
+//  /**
+//   * @brief Destructor for the PID Controller
+//   * @param None.
+//   * @return None.
+//   */
+//  ~pid();
 
   /**
    * @brief Function to compute the output of the PID controller as per the equation output = Kp*Error + Ki*ErrorSum*dt + Kp*(Error-prevError)/dt
@@ -178,3 +175,4 @@ class pid {
    */
   void reset();
 };
+#endif  // INCLUDE_PID_HPP_ //

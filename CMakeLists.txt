@@ -19,7 +19,6 @@ if (COVERAGE)
 else()
     set(CMAKE_CXX_FLAGS "-Wall -Wextra -Wpedantic -g")
 endif()
-
 include(CMakeToolsHelpers OPTIONAL)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_CXX_STANDARD 14)
@@ -27,3 +26,4 @@ set(CMAKE_CXX_STANDARD 14)
 add_subdirectory(app)
 add_subdirectory(test)
 add_subdirectory(vendor/googletest/googletest)
+

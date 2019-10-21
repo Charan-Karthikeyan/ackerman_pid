@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info.cleaned - app/ackerman_controller.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../index.html">top level</a> - <a href="index.html">app</a> - ackerman_controller.cpp<span style="font-size: 80%;"> (source / <a href="ackerman_controller.cpp.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">coverage.info.cleaned</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">42</td>
+            <td class="headerCovTableEntry">61</td>
+            <td class="headerCovTableEntryLo">68.9 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2019-10-21 15:50:18</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">9</td>
+            <td class="headerCovTableEntry">12</td>
+            <td class="headerCovTableEntryMed">75.0 %</td>
+          </tr>
+          <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : /**</a>
+<span class="lineNum">       2 </span>            :  * @file ackerman_controller.cpp
+<span class="lineNum">       3 </span>            :  * @author Ashwin Varghese Kuruttukulam
+<span class="lineNum">       4 </span>            :  * @author Charan Karthikeyan
+<span class="lineNum">       5 </span>            :  * @brief Defines the function to calculate the Radius, wheel velocity
+<span class="lineNum">       6 </span>            :  * and update the current heading.
+<span class="lineNum">       7 </span>            :  * @Copyright &quot;Copyright 2019 &lt;Ashwin Varghese Kuruttukulam&gt;
+<span class="lineNum">       8 </span>            :  * @Copyright &quot;Copyright 2019 &lt;Charan Karthikeyan&gt;
+<span class="lineNum">       9 </span>            :  */
+<span class="lineNum">      10 </span>            : 
+<span class="lineNum">      11 </span>            : #include &quot;ackerman_controller.hpp&quot;
+<a name="12"><span class="lineNum">      12 </span>            : #include&lt;iostream&gt;</a>
+<span class="lineNum">      13 </span>            : 
+<span class="lineNum">      14 </span><span class="lineCov">          3 : ackerman_controller::ackerman_controller(double baseline, double carLen) {</span>
+<span class="lineNum">      15 </span><span class="lineCov">          3 :   ackerman_controller::pid(1, 0, 0, false);</span>
+<span class="lineNum">      16 </span><span class="lineCov">          3 :   ackerman_controller::setdt(0.1);</span>
+<span class="lineNum">      17 </span><span class="lineCov">          3 :   ackerman_controller::baseline = baseline;</span>
+<span class="lineNum">      18 </span><span class="lineCov">          3 :   ackerman_controller::carLen = carLen;</span>
+<span class="lineNum">      19 </span><span class="lineCov">          3 :   ackerman_controller::lWheelVel = 0;</span>
+<span class="lineNum">      20 </span><span class="lineCov">          3 :   ackerman_controller::rWheelVel = 0;</span>
+<span class="lineNum">      21 </span><span class="lineCov">          3 :   ackerman_controller::radius = 0;</span>
+<span class="lineNum">      22 </span><span class="lineCov">          3 :   ackerman_controller::velocitysp = 2;</span>
+<span class="lineNum">      23 </span><span class="lineCov">          3 :   ackerman_controller::headingsp = 0;</span>
+<span class="lineNum">      24 </span><span class="lineCov">          3 :   ackerman_controller::steerAng = 0;</span>
+<a name="25"><span class="lineNum">      25 </span><span class="lineCov">          3 : }</span></a>
+<span class="lineNum">      26 </span>            : 
+<span class="lineNum">      27 </span><span class="lineCov">          1 : ackerman_controller::ackerman_controller(double baseline, double carLen,</span>
+<span class="lineNum">      28 </span>            :                                          double kp, double ki, double kd,
+<span class="lineNum">      29 </span><span class="lineCov">          1 :                                          bool dtMode, double dt) {</span>
+<span class="lineNum">      30 </span><span class="lineCov">          1 :   ackerman_controller::setkp(kp);</span>
+<span class="lineNum">      31 </span><span class="lineCov">          1 :   ackerman_controller::setki(ki);</span>
+<span class="lineNum">      32 </span><span class="lineCov">          1 :   ackerman_controller::setkd(kd);</span>
+<span class="lineNum">      33 </span><span class="lineCov">          1 :   ackerman_controller::setdt(dt);</span>
+<span class="lineNum">      34 </span><span class="lineCov">          1 :   ackerman_controller::setdtMode(dtMode);</span>
+<span class="lineNum">      35 </span><span class="lineCov">          1 :   ackerman_controller::baseline = baseline;</span>
+<span class="lineNum">      36 </span><span class="lineCov">          1 :   ackerman_controller::carLen = carLen;</span>
+<span class="lineNum">      37 </span><span class="lineCov">          1 :   ackerman_controller::lWheelVel = 0;</span>
+<span class="lineNum">      38 </span><span class="lineCov">          1 :   ackerman_controller::rWheelVel = 0;</span>
+<span class="lineNum">      39 </span><span class="lineCov">          1 :   ackerman_controller::radius = 0;</span>
+<span class="lineNum">      40 </span><span class="lineCov">          1 :   ackerman_controller::velocitysp = 2;</span>
+<span class="lineNum">      41 </span><span class="lineCov">          1 :   ackerman_controller::headingsp = 0;</span>
+<span class="lineNum">      42 </span><span class="lineCov">          1 :   ackerman_controller::steerAng = 0;</span>
+<a name="43"><span class="lineNum">      43 </span><span class="lineCov">          1 : }</span></a>
+<span class="lineNum">      44 </span>            : 
+<span class="lineNum">      45 </span><span class="lineNoCov">          0 : void ackerman_controller::calcRadius() {</span>
+<span class="lineNum">      46 </span><span class="lineNoCov">          0 :   ackerman_controller::radius = ackerman_controller::carLen</span>
+<span class="lineNum">      47 </span><span class="lineNoCov">          0 :       * (tan((3.14 / 2) - ackerman_controller::steerAng));</span>
+<a name="48"><span class="lineNum">      48 </span><span class="lineNoCov">          0 : }</span></a>
+<span class="lineNum">      49 </span>            : 
+<span class="lineNum">      50 </span><span class="lineNoCov">          0 : void ackerman_controller::calcWheelVel() {</span>
+<span class="lineNum">      51 </span><span class="lineNoCov">          0 :   ackerman_controller::lWheelVel = ackerman_controller::velocitysp</span>
+<span class="lineNum">      52 </span><span class="lineNoCov">          0 :       * (1 - (ackerman_controller::baseline / 2 * ackerman_controller::radius));</span>
+<span class="lineNum">      53 </span><span class="lineNoCov">          0 :   ackerman_controller::rWheelVel = ackerman_controller::velocitysp</span>
+<span class="lineNum">      54 </span><span class="lineNoCov">          0 :       * (1 + (ackerman_controller::baseline / 2 * ackerman_controller::radius));</span>
+<a name="55"><span class="lineNum">      55 </span><span class="lineNoCov">          0 : }</span></a>
+<span class="lineNum">      56 </span>            : 
+<span class="lineNum">      57 </span><span class="lineCov">          2 : double ackerman_controller::getHeadingPoints() {</span>
+<span class="lineNum">      58 </span><span class="lineCov">          2 :   return ackerman_controller::headingsp;</span>
+<a name="59"><span class="lineNum">      59 </span>            : }</a>
+<span class="lineNum">      60 </span>            : 
+<span class="lineNum">      61 </span><span class="lineCov">          2 : double ackerman_controller::getVelocityPoints() {</span>
+<span class="lineNum">      62 </span><span class="lineCov">          2 :   return ackerman_controller::velocitysp;</span>
+<a name="63"><span class="lineNum">      63 </span>            : }</a>
+<span class="lineNum">      64 </span>            : 
+<span class="lineNum">      65 </span><span class="lineNoCov">          0 : void ackerman_controller::run(double *steerAng, double *headingFeedback,</span>
+<span class="lineNum">      66 </span>            :                               double *rWheelVel, double *lWheelVel) {
+<span class="lineNum">      67 </span><span class="lineNoCov">          0 :   *steerAng = ackerman_controller::steerAng;</span>
+<span class="lineNum">      68 </span><span class="lineNoCov">          0 :   ackerman_controller::steerAng = ackerman_controller::compute(</span>
+<span class="lineNum">      69 </span><span class="lineNoCov">          0 :       *headingFeedback);</span>
+<span class="lineNum">      70 </span><span class="lineNoCov">          0 :   ackerman_controller::calcRadius();</span>
+<span class="lineNum">      71 </span><span class="lineNoCov">          0 :   ackerman_controller::calcWheelVel();</span>
+<span class="lineNum">      72 </span><span class="lineNoCov">          0 :   std::cout &lt;&lt; &quot;The velocity of the right wheel is &quot; &lt;&lt; *rWheelVel &lt;&lt; std::endl;</span>
+<span class="lineNum">      73 </span><span class="lineNoCov">          0 :   std::cout &lt;&lt; &quot;The velocity of the left wheel is&quot; &lt;&lt; *lWheelVel &lt;&lt; std::endl;</span>
+<a name="74"><span class="lineNum">      74 </span><span class="lineNoCov">          0 : }</span></a>
+<span class="lineNum">      75 </span>            : 
+<span class="lineNum">      76 </span><span class="lineCov">          2 : void ackerman_controller::setSetPoints(double headingsp, double velocitysp) {</span>
+<span class="lineNum">      77 </span><span class="lineCov">          2 :   ackerman_controller::headingsp = headingsp;</span>
+<span class="lineNum">      78 </span><span class="lineCov">          2 :   ackerman_controller::setSp(headingsp);</span>
+<span class="lineNum">      79 </span><span class="lineCov">          2 :   ackerman_controller::velocitysp = velocitysp;</span>
+<a name="80"><span class="lineNum">      80 </span><span class="lineCov">          2 : }</span></a>
+<span class="lineNum">      81 </span>            : 
+<span class="lineNum">      82 </span><span class="lineCov">          1 : double ackerman_controller::getBaseLine() {</span>
+<span class="lineNum">      83 </span><span class="lineCov">          1 :   return ackerman_controller::baseline;</span>
+<a name="84"><span class="lineNum">      84 </span>            : }</a>
+<span class="lineNum">      85 </span>            : 
+<a name="86"><span class="lineNum">      86 </span><span class="lineCov">          1 : double ackerman_controller::getCarLen() {</span></a>
+<span class="lineNum">      87 </span><span class="lineCov">          1 :   return ackerman_controller::carLen;</span>
+<span class="lineNum">      88 </span><span class="lineCov">          3 : }</span>
+<span class="lineNum">      89 </span>            : 
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.12</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>

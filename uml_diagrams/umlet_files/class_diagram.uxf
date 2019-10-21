@@ -4,10 +4,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>553</x>
-      <y>140</y>
-      <w>245</w>
-      <h>329</h>
+      <x>903</x>
+      <y>154</y>
+      <w>350</w>
+      <h>385</h>
     </coordinates>
     <panel_attributes>&lt;&lt;class&gt;&gt;
 pid
@@ -17,10 +17,11 @@ pid
 - kd : double
 - prevError : double
 - errorSum : double
-- prevTime : double
+- prevTime : time
 - setPoint : double
-- dtMode :bool
-- dtVal :double
+- dtMode : bool
+- dtVal : double
+- firstRunFlag : bool
 --
 + &lt;&lt;constructor&gt;&gt;pid()
 + &lt;&lt;constructor&gt;&gt;pid(double kp, double ki, double kd)
@@ -39,18 +40,18 @@ pid
 + getkp() : kp : double
 + getki() : kd : double
 + getkd() : ki : double
-+ getErrorSum() : ki : double
-+ getPrevError() : ki : double
++ getErrorSum() : errorSum : double
++ getPrevError() : prevError : double
 + reset() : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>7</x>
-      <y>154</y>
-      <w>525</w>
-      <h>105</h>
+      <x>0</x>
+      <y>91</y>
+      <w>896</w>
+      <h>147</h>
     </coordinates>
     <panel_attributes>&lt;&lt;class&gt;&gt;
 ackerman_sim
@@ -58,19 +59,21 @@ ackerman_sim
 - dt : double
 - posX : double
 - posY : double
+- updateHeading : double
 --
-+ compute(steerAng : double, rWheelVel : double, lWheelVel : double) : heading : double, vel : double
-+ ackerman_sim() : void
-+ ackerman_sim(dt : double) : void</panel_attributes>
++ &lt;&lt;constructor&gt;&gt;ackerman_sim()
++ &lt;&lt;constructor&gt;&gt;ackerman_sim(dt :double) 
++ compute(steerAng : double, rWheelVel : double, lWheelVel : double, &amp;posX : double, &amp;posY : double, &amp;updateHeading : double, carLen : double) : heading : double, vel : double
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>266</y>
-      <w>532</w>
-      <h>189</h>
+      <x>70</x>
+      <y>273</y>
+      <w>700</w>
+      <h>245</h>
     </coordinates>
     <panel_attributes>&lt;&lt;class&gt;&gt;
 ackerman_controller
@@ -84,10 +87,27 @@ ackerman_controller
 - velocitysp : double
 - headingsp : double
 --
-+ compute(headingFeedback : double, &amp;rWheelVel : double, &amp;lWheelVel : double,) : steerAng : double
-+ changeSetpoints(headingsp : double,velocitysp : double) : void
++ &lt;&lt;constructor&gt;&gt;ackerman_controller( baseline : double , carLength : double )
++ &lt;&lt;constructor&gt;&gt;ackerman_controller(baseline : double ,carLen : double ,kp : double, ki : double , kd : double , dtMode : bool, dt : double )
++ getHeadingpoints() : headingsp : double 
++ getVelocityPoints() :  velocitysp : double
++ run(double headingFeedback, double &amp;rWheelVel,double &amp;lWheelVel) : steerAng : double
++ setSetPoints(headingsp : double,velocitysp : double) : void
++ getBaseLine() : double baseline
++ getCarLen() : double carLen
 - calcRadius() : void
 - calcWheelVel() : void</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>763</x>
+      <y>350</y>
+      <w>154</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;200.0;10.0</additional_attributes>
   </element>
 </diagram>
