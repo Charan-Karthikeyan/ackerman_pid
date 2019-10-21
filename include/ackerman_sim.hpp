@@ -43,8 +43,8 @@ class ackerman_sim {
    * @param The velocity of the right wheel(rWheelVel)
    * @return The x position, y position and new heading
    */
-  void compute(double currentHeading, double steerAng, double rWheelVel,
-               double lWheelVel, double &posX, double &posY,
-               double &updatedHeading, double carLen);
+  void compute(double steerAng, double rWheelVel, double lWheelVel,
+               double &posX, double &posY, double &updatedHeading,
+               double carLen);
 
 };

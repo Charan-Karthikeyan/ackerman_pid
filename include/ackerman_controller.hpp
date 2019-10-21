@@ -47,6 +47,11 @@ class ackerman_controller : public pid {
    */
   ackerman_controller(double baseline, double carLength);
 
+  //ADD comments here!!
+
+  ackerman_controller(double baseline, double carLen, double kp, double ki,
+                      double kd, bool dtMode, double dt);
+
   /**
    * @brief Function to get the value of the heading setpoints
    * @param None.
@@ -66,7 +71,7 @@ class ackerman_controller : public pid {
    * @param The feedback about the heading from the PID controller.
    * @return The values of steering angle, the velocity of the right and left wheels.
    */
-  double compute(double headingFeedback, double &rWheelVel, double &lWheelVel);
+  double run(double headingFeedback, double &rWheelVel, double &lWheelVel);
 
   /**
    * TODO : check the brief
