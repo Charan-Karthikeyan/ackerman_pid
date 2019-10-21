@@ -65,7 +65,7 @@ double ackerman_controller::getVelocityPoints() {
 void ackerman_controller::run(double *steerAng, double *headingFeedback,
                               double *rWheelVel, double *lWheelVel) {
   *steerAng = ackerman_controller::steerAng;
-  ackerman_controller::steerAng = ackerman_controller::pid::compute(
+  ackerman_controller::steerAng = ackerman_controller::compute(
       *headingFeedback);
   ackerman_controller::calcRadius();
   ackerman_controller::calcWheelVel();
