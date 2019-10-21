@@ -9,7 +9,8 @@
  * @Copyright "Copyright 2019 <Ashwin Vargheese Kuruttukulam>
  * @Copyright "Copyright 2019 <Charan Karthikeyan>
  */
-#pragma once
+#ifndef INCLUDE_PID_HPP_
+#define INCLUDE_PID_HPP_
 
 #include<iostream>
 #include<string>
@@ -20,8 +21,8 @@ class pid {
   std::chrono::system_clock::time_point prevTime;
   double kp, ki, kd, prevError, errorSum, dtVal, setPoint;
   bool dtMode, firstRunFlag;
- public:
 
+ public:
   /**
    * @brief Constructor for the PID Controller, Initialize kp to 1, ki and kd to 0.
    * @param None.
@@ -174,3 +175,4 @@ class pid {
    */
   void reset();
 };
+#endif  // INCLUDE_PID_HPP_ //
