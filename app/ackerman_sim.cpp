@@ -8,7 +8,7 @@
  */
 
 #include"ackerman_sim.hpp"
-#include <math.h>
+
 
 ackerman_sim::ackerman_sim() {
   ackerman_sim::dt = 0.01;  // default value for dt
@@ -31,7 +31,7 @@ ackerman_sim::ackerman_sim(double dt) {
 void ackerman_sim::compute(double steerAng, double rWheelVel, double lWheelVel,
                            double &posX, double &posY, double &heading,
                            double carLen) {
-  double vehVel = (rWheelVel + lWheelVel) / 2;  //vehicle center velocity
+  double vehVel = (rWheelVel + lWheelVel) / 2*carLen;  //vehicle center velocity
   if (steerAng > (3.14 / 4))
     steerAng = 3.14 / 4;
   else if (steerAng < (-3.14 / 4))
