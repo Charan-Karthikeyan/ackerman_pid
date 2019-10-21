@@ -65,7 +65,9 @@ cmake ..
 make
 Run tests: ./test/cpp-test
 Run program: ./app/shell-app
-The program is already initailized with all the variables needed and can be run normally for a fully functional progarm.
 ``` 
+The program is already initailized with all the variables needed and can be run normally for a fully functional progarm.
+The headingSp variable and the velSp variables in the main.cpp file can be edited as required.
+Please note: headingSp should lie between -3.14 and +3.14
 
 
