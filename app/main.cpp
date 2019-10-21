@@ -1,3 +1,11 @@
+/**
+ * @file main.cpp
+ * @author Ashwin Varghese Kuruttukulam
+ * @author Charan Karthikeyan
+ * @brief Main program that runs the pid, ackerman controller and the ackerman simulation classes.
+ * @Copyright "Copyright 2019 <Ashwin Varghese Kuruttukulam>
+ * @Copyright "Copyright 2019 <Charan Karthikeyan>
+ */
 #include <iostream>
 #include "ackerman_controller.hpp"
 #include "ackerman_sim.hpp"
@@ -27,7 +35,7 @@ int main() {
 
   //running simulation
   for (int k = 1; k < nIterations; k++) {
-    std::cout << "New Sim : " << std::endl;
+    std::cout << "New Sim : \t " << k << std::endl;
     simObj.compute(steer, lVel, rVel, posX, posY, heading, carLen);
     std::cout << "Current Heading : " << heading << ", Current X Position : "
               << posX << ", Current Y Position : " << posY << std::endl;
