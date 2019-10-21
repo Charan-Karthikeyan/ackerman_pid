@@ -53,6 +53,7 @@ void ackerman_controller::calcWheelVel() {
       * (1 - (ackerman_controller::baseline / 2 * ackerman_controller::radius));
   ackerman_controller::rWheelVel = ackerman_controller::velocitysp
       * (1 + (ackerman_controller::baseline / 2 * ackerman_controller::radius));
+
 }
 
 double ackerman_controller::getHeadingPoints() {
@@ -71,6 +72,8 @@ double ackerman_controller::run(double headingFeedback, double &rWheelVel,
       headingFeedback);
   ackerman_controller::calcRadius();
   ackerman_controller::calcWheelVel();
+  std::cout<< "The velocity of the right wheel is " << rWheelVel << std::endl;
+  std::cout << "The velocity of the left wheel is" << lWheelVel << std::endl;
   return ackerman_controller::steerAng;
 }
 
@@ -81,3 +84,12 @@ void ackerman_controller::setSetPoints(double headingsp, double velocitysp) {
   ackerman_controller::velocitysp = velocitysp;
 
 }
+
+double ackerman_controller::getBaseLine() {
+  return ackerman_controller::baseline;
+}
+
+double ackerman_controller::getCarLen() {
+  return ackerman_controller::carLen;
+}
+
