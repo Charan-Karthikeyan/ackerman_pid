@@ -1,7 +1,5 @@
 # PID Controller for Ackermann Steering
-[![Build Status](https://travis-ci.org/ashwinvk94/ackermann_pid.svg?branch=master)](https://travis-ci.org/ashwinvk94/ackermann_pid)
 [![Build Status](https://travis-ci.org/Charan-Karthikeyan/ackerman_pid.svg?branch=iteration_1_design)](https://travis-ci.org/Charan-Karthikeyan/ackerman_pid)
-[![Coverage Status](https://coveralls.io/repos/github/ashwinvk94/ackermann_pid/badge.svg?branch=master)](https://coveralls.io/github/ashwinvk94/ackermann_pid?branch=master)
 [![Coverage Status](https://coveralls.io/repos/github/Charan-Karthikeyan/ackerman_pid/badge.svg?branch=iteration_2_implementation)](https://coveralls.io/github/Charan-Karthikeyan/ackerman_pid?branch=iteration_2_implementation)
 ---
 
@@ -34,18 +32,15 @@ make
 Run tests: ./test/cpp-test
 Run program: ./app/shell-app
 ```
+## Cpplint check
 
-## Installation for matplotlib
-The matplotlib library is used to simulate the points generated form the 
-[Link for matplotlib repo](https://github.com/lava/matplotlib-cpp.git)
+cd  <path to repository>
+cpplint $( find . -name \*.hpp -or -name \*.cpp | grep -vE -e "^./build/" -e "^./vendor/" -e "^./docs/" -e "^./results" )
 
-```
-git clone --recursive https://github.com/lava/matplotlib-cpp.git
+## Cppcheck check
+
 cd <path to repository>
-g++ examples/minimal.cpp -std=c++11 -I/usr/include/python2.7 -lpython2.7
-Run Test :./a.out.
-```
-To check integrity Run the tests, this command opens a test graph as shown in the repo.
+cppcheck --enable=all --std=c++11 -I include/ --suppress=missingIncludeSystem $( find . -name *.cpp | grep -vE -e "^./build/" -e "^./vendor/" )
 
 ## Building for code coverage (for assignments beginning in Week 4)
 ```
@@ -64,7 +59,14 @@ In your Eclipse workspace directory (or create a new one), checkout the repo (an
 ```
 mkdir -p ~/workspace
 cd ~/workspace
-git clone --recursive https://github.com/ashwinvk94/ackermann_pid
+git clone --recursive https://github.com/ashwinvk94/ackermann_pid``
+git clone --recursive https://github.com/lava/matplotlib-cpp.git
+cd <path to repository>
+g++ examples/minimal.cpp -std=c++11 -I/usr/include/python2.7 -lpython2.7
+Run Test :./a.out.
+```
+To check integrity Run the tests, this command opens a test graph as shown in the repo.
+
 ```
 
 In your work directory, use cmake to create an Eclipse project for an [out-of-source build] of cpp-boilerplate
