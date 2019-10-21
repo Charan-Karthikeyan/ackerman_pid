@@ -1,4 +1,3 @@
-
 /**
  * @file test_ackerman_controller.cpp
  * @author Ashwin Varghese Kuruttukulam
@@ -35,14 +34,14 @@ TEST(VaidateAckermanController, TestCompute) {
   double a = 1;
   double b = 2;
   ackerman_controller ack_cont(a, b);
-  double lWheel = 1,rWheel= 1,heading = 10,steer=0;
-  double *lWheelptr=&lWheel;
-  double *rWheelptr=&rWheel;
-  double *headingptr=&heading;
+  double lWheel = 1, rWheel = 1, heading = 10, steer = 0;
+  double *lWheelptr = &lWheel;
+  double *rWheelptr = &rWheel;
+  double *headingptr = &heading;
   double *steerptr = &steer;
   ack_cont.setSetPoints(8, 2);
   ack_cont.setkp(1);
-  ack_cont.run(steerptr,headingptr, rWheelptr, lWheelptr);
+  ack_cont.run(steerptr, headingptr, rWheelptr, lWheelptr);
   EXPECT_EQ(*steerptr, 2);
   EXPECT_NEAR(*rWheelptr, 1.017, 0.05);
   EXPECT_NEAR(*lWheelptr, 0.982, 0.05);

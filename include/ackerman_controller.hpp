@@ -82,8 +82,8 @@ class ackerman_controller : public pid {
    * @param The velocity of the right and left wheels(rWheelVel, lWheelVel)(only for testing we use these values)
    * @return The values of steering angle, the velocity of the right and left wheels.
    */
-  void run(double *steerAng,double *headingFeedback, double *rWheelVel,
-             double *lWheelVel);
+  void run(double *steerAng, double *headingFeedback, double *rWheelVel,
+           double *lWheelVel);
 
   /**
    * @brief Function to update the target points.
