@@ -21,18 +21,6 @@ cd Umlet
 Run program: java -jar umlet.jar 
 ```
 
-## Standard install via command-line
-
-```
-git clone --recursive https://github.com/ashwinvk94/ackermann_pid
-cd <path to repository>
-mkdir build
-cd build
-cmake ..
-make
-Run tests: ./test/cpp-test
-Run program: ./app/shell-app
-```
 ## Cpplint check
 ```
 cd  <path to repository>
@@ -64,5 +52,20 @@ make
 make code_coverage
 ```
 This generates a index.html page in the build/coverage sub-directory that can be viewed locally in a web browser.
+
+## Personal Interest 
+The reason that we as a team took up this project is because of our common interrests in autonomous systems and how to control them to get the desired output from them. Ashwin has been involved in the field of drone systems development in the area of visual system and Charan has been involved in the field of Autonomous cars in the field of planning and perception and this backgrounds led us to ge into the control system behind autonomous systems. This is the reason behind us taking this project.
+
+## Running the code
+```
+git clone --recursive https://github.com/Charan-Karthikeyan/ackerman_pid/commits/master
+cd <path to repository>
+mkdir build 
+cmake ..
+make
+Run tests: ./test/cpp-test
+Run program: ./app/shell-app
+The program is already initailized with all the variables needed and can be run normally for a fully functional progarm.
+``` 
 
 
