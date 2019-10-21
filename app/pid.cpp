@@ -2,9 +2,7 @@
  * @file pid.cpp
  * @author Ashwin Varghese Kuruttukulam
  * @author Charan Karthikeyan
- * @brief Defines a PID Controller from the feedback/measured value
- * and the setpoint. The output of the PID is calculated as per the equation
- * output = Kp*Error + Ki*ErrorSum*dt + Kp*(Error-prevError)/dt
+ * @brief Definition of the PID class to calculate the feedback
  * @Copyright "Copyright 2019 <Ashwin Varghese Kuruttukulam>
  * @Copyright "Copyright 2019 <Charan Karthikeyan>
  */
